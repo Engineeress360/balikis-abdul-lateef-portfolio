@@ -6,24 +6,32 @@ const projects = [
     description:
       "A full-stack web app leveraging NLP to generate flashcards, quizzes, and summaries from uploaded lecture notes.",
     tags: ["React", "Python", "OpenAI API"],
+    metric: "99.27%",
+    metricLabel: "Model Accuracy",
   },
   {
     title: "Campus Event Manager",
     description:
       "A responsive platform for university clubs to create, manage, and promote events with real-time RSVP tracking.",
     tags: ["TypeScript", "Node.js", "PostgreSQL"],
+    metric: "5,000+",
+    metricLabel: "Students Served",
   },
   {
     title: "Debate Prep Toolkit",
     description:
       "A research and argument-mapping tool designed for competitive debate teams, featuring timed practice rounds.",
     tags: ["React", "Firebase", "Tailwind"],
+    metric: "30+",
+    metricLabel: "Teams Using It",
   },
   {
     title: "Personal Finance Dashboard",
     description:
       "An interactive dashboard that visualises spending patterns and provides budgeting insights using chart libraries.",
     tags: ["Next.js", "D3.js", "Supabase"],
+    metric: "12",
+    metricLabel: "Chart Types",
   },
 ];
 
@@ -47,6 +55,16 @@ const Projects = () => {
               key={project.title}
               className="group card-gradient rounded-xl border border-border p-6 space-y-4 hover:border-primary/40 hover:glow-shadow transition-all duration-300"
             >
+              {/* Metric highlight */}
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-extrabold gradient-text tracking-tight">
+                  {project.metric}
+                </span>
+                <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  {project.metricLabel}
+                </span>
+              </div>
+
               <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                 {project.title}
               </h3>

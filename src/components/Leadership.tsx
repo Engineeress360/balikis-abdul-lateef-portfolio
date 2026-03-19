@@ -29,33 +29,36 @@ const roles = [
 
 const Leadership = () => {
   return (
-    <section id="leadership" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto space-y-16">
+    <section id="leadership" className="py-24 px-6 relative">
+      {/* Subtle warm-toned background to differentiate from technical sections */}
+      <div className="absolute inset-0 bg-gradient-to-b from-accent/[0.03] via-transparent to-accent/[0.03] pointer-events-none" />
+
+      <div className="relative max-w-5xl mx-auto space-y-16">
         <div className="space-y-4 text-center">
+          <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-2">
+            Beyond Code
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Leadership & <span className="gradient-text">Impact</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Beyond code — roles where I've driven community impact and
-            organisational excellence.
+            Roles where I've driven community impact and organisational
+            excellence.
           </p>
         </div>
 
         <div className="relative space-y-8">
           {/* Timeline line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-border hidden md:block" />
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-primary/20 to-transparent hidden md:block" />
 
           {roles.map((role) => (
-            <div
-              key={role.title}
-              className="relative md:pl-16 group"
-            >
+            <div key={role.title} className="relative md:pl-16 group">
               {/* Timeline dot */}
               <div className="absolute left-4 top-6 w-5 h-5 rounded-full border-2 border-primary bg-background hidden md:flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-primary" />
               </div>
 
-              <div className="card-gradient rounded-xl border border-border p-6 space-y-3 hover:border-primary/40 transition-colors duration-300">
+              <div className="rounded-xl border border-border/60 bg-card/60 backdrop-blur-sm p-6 space-y-3 hover:border-primary/40 transition-colors duration-300">
                 <div className="flex items-start gap-4">
                   <div className="p-2.5 rounded-lg bg-primary/10 text-primary shrink-0">
                     <role.icon size={20} />
