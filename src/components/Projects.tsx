@@ -2,12 +2,20 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "AI-Powered Intrusion Detection System",
+    description:
+      "Developed a DQN and Q-learning based model to detect network threats, achieving 99.27% accuracy under resource constraints.",
+    tags: ["Python", "Reinforcement Learning", "Machine Learning"],
+    metric: "99.27%",
+    metricLabel: "Detection Accuracy",
+  },
+  {
     title: "AI-Powered Study Companion",
     description:
       "A full-stack web app leveraging NLP to generate flashcards, quizzes, and summaries from uploaded lecture notes.",
     tags: ["React", "Python", "OpenAI API"],
-    metric: "99.27%",
-    metricLabel: "Model Accuracy",
+    metric: "95%+",
+    metricLabel: "User Satisfaction",
   },
   {
     title: "Campus Event Manager",
@@ -24,14 +32,6 @@ const projects = [
     tags: ["React", "Firebase", "Tailwind"],
     metric: "30+",
     metricLabel: "Teams Using It",
-  },
-  {
-    title: "Personal Finance Dashboard",
-    description:
-      "An interactive dashboard that visualises spending patterns and provides budgeting insights using chart libraries.",
-    tags: ["Next.js", "D3.js", "Supabase"],
-    metric: "12",
-    metricLabel: "Chart Types",
   },
 ];
 

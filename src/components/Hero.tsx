@@ -9,8 +9,10 @@ const Hero = () => {
       </div>
 
       <div className="relative max-w-3xl text-center space-y-8 animate-fade-up">
-        <div className="inline-block px-4 py-1.5 rounded-full border border-border bg-secondary text-muted-foreground text-sm font-medium tracking-wide">
-          Open to Opportunities
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-secondary text-muted-foreground text-sm font-medium tracking-wide">
+          <span>Computer Science Graduate</span>
+          <span className="w-1 h-1 rounded-full bg-primary" />
+          <span>Debate Coach</span>
         </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.1]">
@@ -23,9 +25,7 @@ const Hero = () => {
         </p>
 
         <p className="text-base sm:text-lg text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
-          Computer Science graduate with a passion for building scalable software
-          and empowering communities through strategic communication, debate coaching,
-          and mentorship.
+          Bridging the gap between complex technical systems and human-centric solutions.
         </p>
 
         <div className="flex items-center justify-center gap-4 pt-4">
