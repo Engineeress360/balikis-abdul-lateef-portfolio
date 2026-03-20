@@ -7,7 +7,7 @@ const roles = [
     org: "University Debate Society",
     period: "2023 – Present",
     description:
-      "Trained 30+ students in competitive debate, leading the team to regional finals. Developed curriculum for argument construction and public speaking.",
+      "Trained 14+ students, achieving a 100% qualification rate in competitions. Developed curriculum for argument construction and public speaking.",
   },
   {
     icon: Award,
@@ -15,7 +15,7 @@ const roles = [
     org: "Student Government Association",
     period: "2022 – 2023",
     description:
-      "Oversaw fair and transparent student elections for a body of 5,000+ students, managing a committee of 12 volunteers.",
+      "Digitized voting for 400+ students, reducing processing time by 60%. Managed a committee of 12 volunteers to ensure fair and transparent elections.",
   },
   {
     icon: Users,
