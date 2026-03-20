@@ -39,7 +39,7 @@ const Leadership = () => {
             Beyond Code
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Leadership & <span className="gradient-text">Impact</span>
+            Leadership & <span className="gradient-text">Strategic Communication</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
             Roles where I've driven community impact and organisational

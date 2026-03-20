@@ -4,10 +4,10 @@ const awards = [
   {
     icon: Trophy,
     title: "50 Most Reputable Students",
-    org: "University-Wide Recognition",
-    year: "2024",
+    org: "Faculty of CIS, University of Ilorin",
+    year: "2022/2023",
     description:
-      "Selected among the 50 most reputable students across the entire university for outstanding academic performance, leadership, and community impact.",
+      "Named among the 50 most reputable students in the Faculty of CIS, University of Ilorin for academic excellence and leadership.",
   },
   {
     icon: Star,
