@@ -1,44 +1,44 @@
-const technicalSkills = [
+const coreStack = [
   "Python",
+  "JavaScript",
+  "PHP",
   "Java",
   "C++",
-  "PHP",
-  "JavaScript",
   "HTML/CSS",
   "MySQLi",
-  "Machine Learning",
 ];
 
-const leadershipSkills = [
-  "Debate Coaching",
+const domainExpertise = [
+  "Machine Learning",
+  "Software Development",
   "Strategic Communication",
-  "Public Speaking",
-  "Agile Project Management",
+  "Project Management",
   "Digital Marketing",
+  "Debate Coaching",
   "Mentorship",
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto space-y-16">
+    <section id="skills" className="py-20 sm:py-24 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
         <div className="space-y-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            A blend of technical depth and leadership capability.
+            A blend of technical depth and domain capability.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="card-gradient rounded-xl border border-border p-8 space-y-6">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="card-gradient rounded-xl border border-border p-6 sm:p-8 space-y-6 card-hover">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Technical Stack
+              Core Stack
             </h3>
             <div className="flex flex-wrap gap-2.5">
-              {technicalSkills.map((skill) => (
+              {coreStack.map((skill) => (
                 <span
                   key={skill}
                   className="px-3.5 py-2 rounded-lg bg-secondary text-sm text-secondary-foreground font-medium border border-border hover:border-primary/40 transition-colors"
@@ -49,13 +49,13 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="card-gradient rounded-xl border border-border p-8 space-y-6">
+          <div className="card-gradient rounded-xl border border-border p-6 sm:p-8 space-y-6 card-hover">
             <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-accent" />
-              Leadership & Strategy
+              Domain Expertise
             </h3>
             <div className="flex flex-wrap gap-2.5">
-              {leadershipSkills.map((skill) => (
+              {domainExpertise.map((skill) => (
                 <span
                   key={skill}
                   className="px-3.5 py-2 rounded-lg bg-secondary text-sm text-secondary-foreground font-medium border border-border hover:border-accent/40 transition-colors"

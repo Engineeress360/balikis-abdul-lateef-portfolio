@@ -1,18 +1,18 @@
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useState } from "react";
+import Connect from "./Connect";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", formData);
   };
 
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-3xl mx-auto space-y-16">
+    <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto space-y-12 sm:space-y-16">
         <div className="space-y-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Get in <span className="gradient-text">Touch</span>
@@ -21,6 +21,8 @@ const Contact = () => {
             Whether it's a project, opportunity, or just a conversation — I'd love to hear from you.
           </p>
         </div>
+
+        <Connect />
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-5">
@@ -58,21 +60,13 @@ const Contact = () => {
         </form>
 
         <div className="flex items-center justify-center gap-6 pt-4">
-          {[
-            { icon: Mail, href: "mailto:balikis@example.com", label: "Email" },
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
-            { icon: Twitter, href: "#", label: "Twitter" },
-          ].map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              aria-label={label}
-              className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
-            >
-              <Icon size={20} />
-            </a>
-          ))}
+          <a
+            href="mailto:balikis@example.com"
+            aria-label="Email"
+            className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+          >
+            <Mail size={20} />
+          </a>
         </div>
       </div>
     </section>

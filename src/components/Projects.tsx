@@ -8,37 +8,28 @@ const projects = [
     tags: ["Python", "Reinforcement Learning", "Machine Learning"],
     metric: "99.27%",
     metricLabel: "Detection Accuracy",
+    links: [
+      { label: "View GitHub", href: "https://github.com/Engineeress360/Reinforcement-Learning-IDS" },
+      { label: "View Report", href: "https://drive.google.com/file/d/1lNtQpbhwp6WgJj9BsYme4oxBvnW-VUG0/view?usp=drivesdk" },
+    ],
   },
   {
-    title: "AI-Powered Study Companion",
+    title: "Shod Systems Nigeria Limited",
     description:
-      "A full-stack web app leveraging NLP to generate flashcards, quizzes, and summaries from uploaded lecture notes.",
-    tags: ["React", "Python", "OpenAI API"],
-    metric: "95%+",
-    metricLabel: "User Satisfaction",
-  },
-  {
-    title: "Campus Event Manager",
-    description:
-      "A responsive platform for university clubs to create, manage, and promote events with real-time RSVP tracking.",
-    tags: ["TypeScript", "Node.js", "PostgreSQL"],
-    metric: "5,000+",
-    metricLabel: "Students Served",
-  },
-  {
-    title: "Debate Prep Toolkit",
-    description:
-      "A research and argument-mapping tool designed for competitive debate teams, featuring timed practice rounds.",
-    tags: ["React", "Firebase", "Tailwind"],
-    metric: "30+",
-    metricLabel: "Teams Using It",
+      "A corporate web solution for a Microsoft-certified IT partner, focusing on ERP implementation, BPO services, and vertical business solutions.",
+    tags: ["Web Development", "Corporate Solutions"],
+    metric: "Live",
+    metricLabel: "Production Site",
+    links: [
+      { label: "Visit Website", href: "https://www.shodsystems.com/" },
+    ],
   },
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto space-y-16">
+    <section id="projects" className="py-20 sm:py-24 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
         <div className="space-y-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Featured <span className="gradient-text">Projects</span>
@@ -53,9 +44,8 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group card-gradient rounded-xl border border-border p-6 space-y-4 hover:border-primary/40 hover:glow-shadow transition-all duration-300"
+              className="group card-gradient rounded-xl border border-border p-6 space-y-4 card-hover"
             >
-              {/* Metric highlight */}
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-extrabold gradient-text tracking-tight">
                   {project.metric}
@@ -81,9 +71,19 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              <button className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline pt-2">
-                View Project <ExternalLink size={14} />
-              </button>
+              <div className="flex flex-wrap gap-3 pt-2">
+                {project.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                  >
+                    {link.label} <ExternalLink size={14} />
+                  </a>
+                ))}
+              </div>
             </div>
           ))}
         </div>
