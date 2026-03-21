@@ -4,29 +4,29 @@ const roles = [
   {
     icon: BookOpen,
     title: "Debate Coach",
-    org: "University Debate Society",
-    period: "2023 – Present",
+    org: "Faculty of CIS, University of Ilorin",
+    period: "2023 – 2024",
     description:
       "Trained 14+ students, achieving a 100% qualification rate in competitions. Developed curriculum for argument construction and public speaking.",
     badges: ["14+ Students", "100% Qual. Rate", "Curriculum Design"],
   },
   {
     icon: Award,
-    title: "Electoral Committee Chair",
-    org: "Student Government Association",
-    period: "2022 – 2023",
+    title: "Electoral Committee Chairman",
+    org: "NACOSSEC, University of Ilorin",
+    period: "2024",
     description:
-      "Digitized voting for 400+ students, reducing processing time by 60%. Managed a committee of 12 volunteers to ensure fair and transparent elections.",
-    badges: ["400+ Voters", "60% Faster", "12 Volunteers"],
+      "Digitized voting for 400+ students, reducing processing time by 100%. Managed a committee of 6 volunteers to ensure fair and transparent elections.",
+    badges: ["400+ Voters", "100% Faster", "6 Volunteers"],
   },
   {
     icon: Users,
-    title: "Peer Mentor",
-    org: "CS Department Mentorship Programme",
-    period: "2021 – 2023",
+    title: "Mentor",
+    org: "Dareword Students Association (DSA), Unilorin Chapter",
+    period: "2023 – 2024",
     description:
-      "Guided first-year Computer Science students through academic challenges, career planning, and technical skill-building.",
-    badges: ["First-Year Mentees", "Career Guidance", "Technical Skills"],
+      "Guided  students through academic challenges, career planning, technical skill-building and personal development. ",
+    badges: ["Mentees", "Career Guidance", "Technical Skills", "Personal Development"],
   },
 ];
 

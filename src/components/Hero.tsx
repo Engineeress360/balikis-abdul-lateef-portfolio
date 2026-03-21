@@ -43,11 +43,16 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right: Placeholder image */}
+          {/* Right: Actual image */}
           <div className="flex justify-center md:justify-end animate-fade-in">
             <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-secondary border border-border flex items-center justify-center overflow-hidden">
-              <div className="text-muted-foreground/40 text-sm font-medium">Professional Photo</div>
-            </div>
+              <img 
+              src="/Profile Picture.png"
+              alt="Professional Profile"
+              ></img>
+
+    
+          </div>
           </div>
         </div>
       </div>

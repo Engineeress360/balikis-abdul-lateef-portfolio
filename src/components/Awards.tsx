@@ -11,11 +11,11 @@ const awards = [
   },
   {
     icon: Star,
-    title: "Dean's List",
-    org: "Faculty of Computing",
-    year: "2022 – 2024",
+    title: "Best Judge",
+    org: "Emirates Verbal Combat",
+    year: "2024",
     description:
-      "Consistently placed on the Dean's List for maintaining a top GPA across multiple semesters.",
+      "Recognized for excellence in adjudication, demonstrating fairness and expertise in competitive evaluation; at the annual Inter-Faculty Debate competition organized by University of Ilorin.  ",
   },
 ];
 

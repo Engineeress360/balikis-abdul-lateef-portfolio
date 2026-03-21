@@ -18,11 +18,8 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex justify-center md:justify-end">
-            <div className="w-full max-w-sm h-64 sm:h-72 rounded-2xl bg-secondary border border-border flex items-center justify-center">
-              <div className="text-muted-foreground/40 text-sm font-medium">About Photo</div>
-            </div>
-          </div>
+          
+            
         </div>
       </div>
     </section>
