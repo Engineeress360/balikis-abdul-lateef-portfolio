@@ -27,12 +27,14 @@ const Connect = () => {
             GitHub
           </a>
           <a
-            href="#"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-          >
-            <Download size={16} />
-            Download Resume
-          </a>
+  href="/Balikis_Abdul-Lateef_CV.pdf" // place your resume file in the public folder
+  download="Balikis-Abdul-Lateef-Resume.pdf"
+  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium"
+>
+  <Download size={18} />
+  Download Resume
+</a>
+
         </div>
       </div>
     </div>
