@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Publications from "@/components/Publications";
 import Awards from "@/components/Awards";
@@ -12,13 +13,14 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <About />
       <Projects />
       <Publications />
       <Awards />
       <Leadership />
       <Skills />
       <Contact />
-      <footer className="py-8 px-6 border-t border-border text-center text-sm text-muted-foreground">
+      <footer className="py-8 px-4 sm:px-6 border-t border-border text-center text-sm text-muted-foreground">
         © {new Date().getFullYear()} Balikis Abdul-Lateef. All rights reserved.
       </footer>
     </div>

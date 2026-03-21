@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 210 20% 92%;
+    --background: 222 30% 8%;
+    --foreground: 210 20% 95%;
 
-    --card: 220 18% 10%;
+    --card: 222 25% 11%;
     --card-foreground: 210 20% 92%;
 
-    --popover: 220 18% 10%;
+    --popover: 222 25% 11%;
     --popover-foreground: 210 20% 92%;
 
     --primary: 165 60% 50%;
-    --primary-foreground: 220 20% 7%;
+    --primary-foreground: 222 30% 8%;
 
-    --secondary: 220 16% 16%;
+    --secondary: 222 20% 16%;
     --secondary-foreground: 210 20% 80%;
 
-    --muted: 220 14% 14%;
+    --muted: 222 18% 14%;
     --muted-foreground: 215 15% 55%;
 
     --accent: 165 60% 50%;
-    --accent-foreground: 220 20% 7%;
+    --accent-foreground: 222 30% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 14% 18%;
-    --input: 220 14% 18%;
+    --border: 222 18% 18%;
+    --input: 222 18% 18%;
     --ring: 165 60% 50%;
 
     --radius: 0.75rem;
 
     --gradient-primary: linear-gradient(135deg, hsl(165 60% 50%), hsl(185 60% 45%));
-    --gradient-card: linear-gradient(145deg, hsl(220 18% 12%), hsl(220 18% 9%));
+    --gradient-card: linear-gradient(145deg, hsl(222 25% 13%), hsl(222 25% 9%));
     --shadow-glow: 0 0 30px -5px hsl(165 60% 50% / 0.15);
     --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
 
-    --sidebar-background: 220 18% 10%;
+    --sidebar-background: 222 25% 11%;
     --sidebar-foreground: 210 20% 92%;
     --sidebar-primary: 165 60% 50%;
-    --sidebar-primary-foreground: 220 20% 7%;
-    --sidebar-accent: 220 16% 16%;
+    --sidebar-primary-foreground: 222 30% 8%;
+    --sidebar-accent: 222 20% 16%;
     --sidebar-accent-foreground: 210 20% 80%;
-    --sidebar-border: 220 14% 18%;
+    --sidebar-border: 222 18% 18%;
     --sidebar-ring: 165 60% 50%;
   }
 }
@@ -82,5 +82,15 @@
 
   .card-shadow {
     box-shadow: var(--shadow-card);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 0 24px -4px hsl(165 60% 50% / 0.12), var(--shadow-card);
+    border-color: hsl(165 60% 50% / 0.4);
   }
 }

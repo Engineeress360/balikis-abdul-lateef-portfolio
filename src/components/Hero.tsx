@@ -1,51 +1,59 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download, Circle } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
-      <div className="relative max-w-3xl text-center space-y-8 animate-fade-up">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-secondary text-muted-foreground text-sm font-medium tracking-wide">
-          <span>Computer Science Graduate</span>
-          <span className="w-1 h-1 rounded-full bg-primary" />
-          <span>Debate Coach</span>
-        </div>
+      <div className="relative max-w-6xl w-full mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          {/* Left: Text content */}
+          <div className="space-y-6 sm:space-y-8 text-center md:text-left animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-secondary text-muted-foreground text-sm font-medium tracking-wide">
+              <Circle size={8} className="fill-emerald-400 text-emerald-400 animate-pulse" />
+              <span>Available for new opportunities</span>
+            </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-          Balikis<br />
-          <span className="gradient-text">Abdul-Lateef</span>
-        </h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+              Balikis Aduke<br />
+              <span className="gradient-text">Abdul-Lateef</span>
+            </h1>
 
-        <p className="text-xl sm:text-2xl font-medium text-muted-foreground">
-          Software Developer & Communications Strategist
-        </p>
+            <p className="text-lg sm:text-xl font-medium text-muted-foreground max-w-md mx-auto md:mx-0">
+              Bridging Software Engineering with Strategic Leadership.
+            </p>
 
-        <p className="text-base sm:text-lg text-muted-foreground/80 max-w-xl mx-auto leading-relaxed">
-          Bridging the gap between complex technical systems and human-centric solutions.
-        </p>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+              >
+                View Projects
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-semibold text-sm hover:bg-secondary transition-colors"
+              >
+                <Download size={16} />
+                Download Resume
+              </a>
+            </div>
+          </div>
 
-        <div className="flex items-center justify-center gap-4 pt-4">
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
-          >
-            View My Work
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-semibold text-sm hover:bg-secondary transition-colors"
-          >
-            Get in Touch
-          </a>
+          {/* Right: Placeholder image */}
+          <div className="flex justify-center md:justify-end animate-fade-in">
+            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-secondary border border-border flex items-center justify-center overflow-hidden">
+              <div className="text-muted-foreground/40 text-sm font-medium">Professional Photo</div>
+            </div>
+          </div>
         </div>
       </div>
 
       <a
-        href="#projects"
+        href="#about"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
       >
         <ArrowDown size={24} />
