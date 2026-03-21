@@ -1,3 +1,4 @@
-# Welcome to your Lovable project
+# This Portfolio is all about Balikis Abdul-Lateef
 
-TODO: Document your project here
+
+
