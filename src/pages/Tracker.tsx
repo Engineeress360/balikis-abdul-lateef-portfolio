@@ -82,6 +82,7 @@ const INITIAL_PROJECTS: Project[] = [
     name: "Social Media Campaign",
     description: "Plan and execute a multi-platform social media campaign for a mock brand, focusing on engagement and growth metrics.",
     status: "research",
+    category: "social-media",
     tasks: [
       { id: "t7", text: "Define campaign goals & KPIs", done: true },
       { id: "t8", text: "Audience persona research", done: false },
