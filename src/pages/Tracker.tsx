@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Plus, CheckCircle2, Circle, BarChart3, Trash2, ChevronDown, ChevronUp } from "lucide-react";
+import TrackerFilters, { type StatusFilter, type CategoryFilter, type SortOption } from "@/components/TrackerFilters";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -45,6 +46,7 @@ interface Project {
   name: string;
   description: string;
   status: StatusValue;
+  category: string;
   tasks: Task[];
 }
 
@@ -65,6 +67,7 @@ const INITIAL_PROJECTS: Project[] = [
     name: "SEO Blog Strategy",
     description: "Build a content-driven SEO strategy for a niche blog, covering keyword research, on-page optimization, and link building.",
     status: "content-creation",
+    category: "seo",
     tasks: [
       { id: "t1", text: "Keyword research & clustering", done: true },
       { id: "t2", text: "Competitor content audit", done: true },
@@ -79,6 +82,7 @@ const INITIAL_PROJECTS: Project[] = [
     name: "Social Media Campaign",
     description: "Plan and execute a multi-platform social media campaign for a mock brand, focusing on engagement and growth metrics.",
     status: "research",
+    category: "social-media",
     tasks: [
       { id: "t7", text: "Define campaign goals & KPIs", done: true },
       { id: "t8", text: "Audience persona research", done: false },
@@ -93,6 +97,7 @@ const INITIAL_PROJECTS: Project[] = [
     name: "Email Marketing Funnel",
     description: "Design a complete email marketing funnel from lead magnet to conversion, with A/B tested subject lines and automated sequences.",
     status: "campaign-setup",
+    category: "email",
     tasks: [
       { id: "t13", text: "Design lead magnet", done: true },
       { id: "t14", text: "Set up email platform & list", done: true },
@@ -113,6 +118,30 @@ const Tracker = () => {
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
   const [newProject, setNewProject] = useState({ name: "", description: "", status: "research" as StatusValue });
   const [newTaskText, setNewTaskText] = useState<Record<string, string>>({});
+  const [search, setSearch] = useState("");
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
+  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>("all");
+  const [sortBy, setSortBy] = useState<SortOption>("newest");
+
+  const filteredProjects = useMemo(() => {
+    let result = projects.filter((p) => {
+      const matchesSearch = !search || p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase());
+      const matchesStatus = statusFilter === "all" || p.status === statusFilter;
+      const matchesCategory = categoryFilter === "all" || p.category === categoryFilter;
+      return matchesSearch && matchesStatus && matchesCategory;
+    });
+    result.sort((a, b) => {
+      switch (sortBy) {
+        case "name-asc": return a.name.localeCompare(b.name);
+        case "name-desc": return b.name.localeCompare(a.name);
+        case "progress-asc": return progressPercent(a.tasks) - progressPercent(b.tasks);
+        case "progress-desc": return progressPercent(b.tasks) - progressPercent(a.tasks);
+        case "oldest": return a.id.localeCompare(b.id);
+        case "newest": default: return b.id.localeCompare(a.id);
+      }
+    });
+    return result;
+  }, [projects, search, statusFilter, categoryFilter, sortBy]);
 
   const addProject = () => {
     if (!newProject.name.trim()) return;
@@ -121,6 +150,7 @@ const Tracker = () => {
       name: newProject.name,
       description: newProject.description,
       status: newProject.status,
+      category: "other",
       tasks: DEFAULT_TASKS.map((t) => ({ ...t, id: `${Date.now()}-${t.id}` })),
     };
     setProjects((prev) => [...prev, project]);
@@ -247,10 +277,22 @@ const Tracker = () => {
         </div>
       </div>
 
+      {/* Utility Bar */}
+      <TrackerFilters
+        search={search}
+        onSearchChange={setSearch}
+        statusFilter={statusFilter}
+        onStatusFilterChange={setStatusFilter}
+        categoryFilter={categoryFilter}
+        onCategoryFilterChange={setCategoryFilter}
+        sortBy={sortBy}
+        onSortByChange={setSortBy}
+      />
+
       {/* Project Grid */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-12">
         <div className="grid sm:grid-cols-2 gap-4">
-          {projects.map((project) => {
+          {filteredProjects.map((project) => {
             const statusInfo = getStatusInfo(project.status);
             const progress = progressPercent(project.tasks);
             const isExpanded = expandedProject === project.id;
