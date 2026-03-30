@@ -67,6 +67,7 @@ const INITIAL_PROJECTS: Project[] = [
     name: "SEO Blog Strategy",
     description: "Build a content-driven SEO strategy for a niche blog, covering keyword research, on-page optimization, and link building.",
     status: "content-creation",
+    category: "seo",
     tasks: [
       { id: "t1", text: "Keyword research & clustering", done: true },
       { id: "t2", text: "Competitor content audit", done: true },
