@@ -46,6 +46,7 @@ interface Project {
   name: string;
   description: string;
   status: StatusValue;
+  category: string;
   tasks: Task[];
 }
 
