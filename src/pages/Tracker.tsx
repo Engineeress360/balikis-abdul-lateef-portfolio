@@ -277,10 +277,22 @@ const Tracker = () => {
         </div>
       </div>
 
+      {/* Utility Bar */}
+      <TrackerFilters
+        search={search}
+        onSearchChange={setSearch}
+        statusFilter={statusFilter}
+        onStatusFilterChange={setStatusFilter}
+        categoryFilter={categoryFilter}
+        onCategoryFilterChange={setCategoryFilter}
+        sortBy={sortBy}
+        onSortByChange={setSortBy}
+      />
+
       {/* Project Grid */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-12">
         <div className="grid sm:grid-cols-2 gap-4">
-          {projects.map((project) => {
+          {filteredProjects.map((project) => {
             const statusInfo = getStatusInfo(project.status);
             const progress = progressPercent(project.tasks);
             const isExpanded = expandedProject === project.id;
