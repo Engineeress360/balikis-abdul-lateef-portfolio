@@ -118,6 +118,30 @@ const Tracker = () => {
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
   const [newProject, setNewProject] = useState({ name: "", description: "", status: "research" as StatusValue });
   const [newTaskText, setNewTaskText] = useState<Record<string, string>>({});
+  const [search, setSearch] = useState("");
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
+  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>("all");
+  const [sortBy, setSortBy] = useState<SortOption>("newest");
+
+  const filteredProjects = useMemo(() => {
+    let result = projects.filter((p) => {
+      const matchesSearch = !search || p.name.toLowerCase().includes(search.toLowerCase()) || p.description.toLowerCase().includes(search.toLowerCase());
+      const matchesStatus = statusFilter === "all" || p.status === statusFilter;
+      const matchesCategory = categoryFilter === "all" || p.category === categoryFilter;
+      return matchesSearch && matchesStatus && matchesCategory;
+    });
+    result.sort((a, b) => {
+      switch (sortBy) {
+        case "name-asc": return a.name.localeCompare(b.name);
+        case "name-desc": return b.name.localeCompare(a.name);
+        case "progress-asc": return progressPercent(a.tasks) - progressPercent(b.tasks);
+        case "progress-desc": return progressPercent(b.tasks) - progressPercent(a.tasks);
+        case "oldest": return a.id.localeCompare(b.id);
+        case "newest": default: return b.id.localeCompare(a.id);
+      }
+    });
+    return result;
+  }, [projects, search, statusFilter, categoryFilter, sortBy]);
 
   const addProject = () => {
     if (!newProject.name.trim()) return;
@@ -126,6 +150,7 @@ const Tracker = () => {
       name: newProject.name,
       description: newProject.description,
       status: newProject.status,
+      category: "other",
       tasks: DEFAULT_TASKS.map((t) => ({ ...t, id: `${Date.now()}-${t.id}` })),
     };
     setProjects((prev) => [...prev, project]);
