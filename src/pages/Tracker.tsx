@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Plus, CheckCircle2, Circle, BarChart3, Trash2, ChevronDown, ChevronUp } from "lucide-react";
+import TrackerFilters, { type StatusFilter, type CategoryFilter, type SortOption } from "@/components/TrackerFilters";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
