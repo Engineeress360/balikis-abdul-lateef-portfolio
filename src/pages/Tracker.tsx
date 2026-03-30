@@ -97,6 +97,7 @@ const INITIAL_PROJECTS: Project[] = [
     name: "Email Marketing Funnel",
     description: "Design a complete email marketing funnel from lead magnet to conversion, with A/B tested subject lines and automated sequences.",
     status: "campaign-setup",
+    category: "email",
     tasks: [
       { id: "t13", text: "Design lead magnet", done: true },
       { id: "t14", text: "Set up email platform & list", done: true },
